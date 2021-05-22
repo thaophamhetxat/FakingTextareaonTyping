@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Type anthing slowly</h2>
+<textarea cols="10" rows="3" name="text" onkeydown="fakinggame();" id="game"></textarea>
+<script>
+  let n = "";
+    let faking = ['','h','a',' ','h','a','!'];
+function fakinggame() {
+   let a = document.getElementById("game").value;
+    let j = a.length;
+    if (j > 0){
+        for (let i=1;i<=j;i++){
+            n = n + faking[i];
+            if(i==7){
+                document.getElementById("game").value='';
+                n= '';
+            }
+        }
+    }
+    document.getElementById("game").value=n;
+    n="";
+setTimeout("fakinggame()",1);
+}
+
+</script>
+</body>
+</html>
